@@ -1,9 +1,9 @@
 class PL_Square(object):
 	"""Game of Life Square"""
-	def __init__(self):
+	def __init__( self, init_state ):
 		super(PL_Square, self).__init__()
-		self.alive_current = False
-		self.alive_next    = False
+		self.alive_current = init_state
+		self.alive_next    = None
 		self.neighbors = []
 
 	def is_alive( self ):
@@ -45,7 +45,7 @@ class PL_Square(object):
 		else:
 			if live_ct == 3:
 				self.alive_next = True
-			else
+			else:
 				self.alive_next = False
 		return
 
@@ -54,7 +54,7 @@ class PL_Square(object):
 		self.alive_next = None
 
 	def add_neighbor( self, neighbor ):
-		if len( self.neighbors < 8 ):
+		if len( self.neighbors ) < 8:
 			self.neighbors.append( neighbor )
 		else:
 			raise Exception( "Too Many Neighbors" )
