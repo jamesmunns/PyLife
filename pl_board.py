@@ -1,4 +1,5 @@
-from pl_square import PL_Square 
+from pl_square import PL_Square
+import time
 
 class PL_Board( object ):
 	def __init__( self, ifile ):
@@ -65,7 +66,7 @@ def demo( ):
 	while( True ):
 		print board.string_render()
 		board.updt_tick()
-		raw_input( "..." )
+		time.sleep( 0.1 )
 	return
 
 if __name__ == '__main__':
